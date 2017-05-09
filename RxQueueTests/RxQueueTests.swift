@@ -36,7 +36,7 @@ class RxQueueTests: XCTestCase {
 
 		var completed = false
 
-		let queue = Observable.of(1, 2, 3, 4, 5, 6, 7, 8 ,9)
+		let queue = Observable.of(1, 2, 3, 4, 5, 6, 7, 8, 9)
 
 		RxQueue
 			.create(observable: queue, semaphore: semaphore)
