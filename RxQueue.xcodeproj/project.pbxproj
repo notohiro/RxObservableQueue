@@ -462,6 +462,7 @@
 				);
 				INFOPLIST_FILE = RxQueue/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.notohiro.RxQueue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -487,6 +488,7 @@
 				);
 				INFOPLIST_FILE = RxQueue/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.notohiro.RxQueue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -545,6 +547,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/RxQueue/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.notohiro.RxQueue-iOS";
 				PRODUCT_NAME = RxQueue;
@@ -569,6 +572,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/RxQueue/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.notohiro.RxQueue-iOS";
 				PRODUCT_NAME = RxQueue;
@@ -596,6 +600,7 @@
 				D352BFF91EC17098003D5813 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D352BFFA1EC17098003D5813 /* Build configuration list for PBXNativeTarget "RxQueueTests" */ = {
 			isa = XCConfigurationList;
@@ -604,6 +609,7 @@
 				D352BFFC1EC17098003D5813 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D352C00D1EC1716E003D5813 /* Build configuration list for PBXNativeTarget "RxQueue iOS" */ = {
 			isa = XCConfigurationList;
@@ -612,6 +618,7 @@
 				D352C00F1EC1716E003D5813 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

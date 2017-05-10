@@ -26,12 +26,8 @@ class RxQueueTests: XCTestCase {
 		}
 	}
 
-	static func queue() {
-
-	}
-
-    func testSubscribe() {
-        let semaphore = DispatchSemaphore(value: 3)
+	func testSubscribe() {
+		let semaphore = DispatchSemaphore(value: 3)
 		let bag = DisposeBag()
 
 		var completed = false
@@ -58,7 +54,7 @@ class RxQueueTests: XCTestCase {
 		RunLoop.current.run(until: Date(timeIntervalSinceNow: 5))
 
 		XCTAssertTrue(completed)
-    }
+	}
 
 	func testError() {
 		let semaphore = DispatchSemaphore(value: 3)
@@ -120,7 +116,6 @@ class RxQueueTests: XCTestCase {
 			}
 			.subscribe(onNext: { task in
 				// do some time-consuming task
-				print(task)
 				OperationQueue().addOperation {
 					print("\(task) started")
 					sleep(1)

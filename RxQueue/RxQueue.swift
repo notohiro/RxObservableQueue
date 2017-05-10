@@ -10,8 +10,8 @@ import Foundation
 
 import RxSwift
 
-class RxQueue<E> {
-	static func create(observable: Observable<E>, semaphore: DispatchSemaphore) -> Observable<E> {
+open class RxQueue<E> {
+	open static func create(observable: Observable<E>, semaphore: DispatchSemaphore) -> Observable<E> {
 		return Observable.create { observer in
 			var queue = [E]()
 			var completed = false

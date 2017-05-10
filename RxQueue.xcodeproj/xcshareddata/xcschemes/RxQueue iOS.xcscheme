@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D352C0071EC1716E003D5813"
-               BuildableName = "RxQueue iOS.framework"
+               BuildableName = "RxQueue.framework"
                BlueprintName = "RxQueue iOS"
                ReferencedContainer = "container:RxQueue.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D352C0071EC1716E003D5813"
-            BuildableName = "RxQueue iOS.framework"
+            BuildableName = "RxQueue.framework"
             BlueprintName = "RxQueue iOS"
             ReferencedContainer = "container:RxQueue.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D352C0071EC1716E003D5813"
-            BuildableName = "RxQueue iOS.framework"
+            BuildableName = "RxQueue.framework"
             BlueprintName = "RxQueue iOS"
             ReferencedContainer = "container:RxQueue.xcodeproj">
          </BuildableReference>
