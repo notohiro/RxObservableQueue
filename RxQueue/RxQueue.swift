@@ -10,58 +10,120 @@ import Foundation
 
 import RxSwift
 
+open class Counter {
+	var count = 0
+	var maxCount: Int
+	let semaphore = DispatchSemaphore(value: 1)
+
+	init(maxCouncurrentCount: Int) {
+		maxCount = maxCouncurrentCount
+	}
+
+	func up() -> Bool {
+		var ret = false
+
+		semaphore.wait()
+		if count < maxCount {
+			count += 1
+			ret = true
+		}
+		semaphore.signal()
+
+		return ret
+	}
+
+	open func signal() {
+		semaphore.wait()
+		if count > 0 {
+			count -= 1
+		}
+		semaphore.signal()
+	}
+}
+
 open class RxQueue<E> {
-	open static func create(observable: Observable<E>, semaphore: DispatchSemaphore) -> Observable<E> {
+	enum State {
+		case subscribing
+		case disposed
+	}
+
+	enum Result {
+		case error(error: Error)
+		case completed
+	}
+
+	// swiftlint:disable:next function_body_length
+	open static func create(observable: Observable<E>, maxConcurrentCount: Int) -> Observable<(E, Counter)> {
 		return Observable.create { observer in
 			var queue = [E]()
-			var completed = false
-			let accessSemaphore = DispatchSemaphore(value: 1)
+			var state = State.subscribing
+			var observableResult: Result? = nil
+			let counter = Counter(maxCouncurrentCount: maxConcurrentCount)
+			let semaphore = DispatchSemaphore(value: 1)
 
-			let disposable = observable
+			var disposable: Disposable? = observable
 				.subscribe(onNext: { element in
-					accessSemaphore.wait()
-					queue.append(element)
-					accessSemaphore.signal()
-				}, onError: { _ in
-					accessSemaphore.wait()
-					completed = true
-					accessSemaphore.signal()
+					semaphore.wait()
+					if observableResult == nil { queue.append(element) }
+					semaphore.signal()
+				}, onError: { error in
+					semaphore.wait()
+					observableResult = .error(error: error)
+					semaphore.signal()
 				}, onCompleted: {
-					accessSemaphore.wait()
-					completed = true
-					accessSemaphore.signal()
-				}, onDisposed: nil
-				)
+					semaphore.wait()
+					observableResult = .completed
+					semaphore.signal()
+				}, onDisposed: nil)
 
 			let opQueue = OperationQueue()
 			opQueue.qualityOfService = .background
 			opQueue.addOperation {
-				while !(queue.count == 0 && completed) {
+				// (queue.count == 0 && observableResult != nil) means queue will never be added any more.
+				while !(queue.count == 0 && observableResult != nil) {
 					semaphore.wait()
 
-					accessSemaphore.wait()
-
-					if queue.count != 0 {
-						let element = queue.removeFirst()
-						observer.onNext(element)
-					} else {
+					if case .disposed = state {
 						semaphore.signal()
+						break
 					}
 
-					accessSemaphore.signal()
+					if queue.count != 0 && counter.up() {
+						let element = queue.removeFirst()
+						OperationQueue().addOperation { observer.onNext(element, counter) }
+					}
+
+					semaphore.signal()
 				}
 
-				disposable.dispose()
-				observer.onCompleted()
+				semaphore.wait()
+				switch state {
+				case .subscribing:
+					switch observableResult {
+					case .some(.completed):
+						OperationQueue().addOperation { observer.onCompleted() }
+					case let .some(.error(error)):
+						OperationQueue().addOperation { observer.onError(error) }
+					default:
+						OperationQueue().addOperation { observer.onError(NSError()) }
+					}
+				case .disposed:
+					break
+				}
+				semaphore.signal()
 			}
 
 			return Disposables.create {
-				accessSemaphore.wait()
+				semaphore.wait()
 
-				completed = true
-				queue.removeAll()
+				if case .subscribing = state {
+					disposable?.dispose()
+					disposable = nil
+					queue.removeAll()
+					state = .disposed
+				}
 
-				accessSemaphore.signal()
+				semaphore.signal()
 			}
 		}
 	}

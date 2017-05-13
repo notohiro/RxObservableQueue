@@ -13,30 +13,54 @@ import RxSwift
 @testable import RxQueue
 
 class RxQueueTests: XCTestCase {
-	static func queueWithError() -> Observable<Int> {
+	static func createObservable(quantity: Int,
+	                             interval: UInt32 = 0,
+	                             withError error: Error? = nil) -> Observable<Int> {
 		return Observable<Int>.create { observer in
-			for i in 1...3 {
-				sleep(1)
-				observer.onNext(i)
+			var disposed = false
+
+			OperationQueue().addOperation {
+				if quantity > 0 {
+					for i in 1...quantity {
+						if disposed { return }
+
+						observer.onNext(i)
+						sleep(interval)
+					}
+				}
+
+				if let error = error {
+					observer.onError(error)
+				} else {
+					observer.onCompleted()
+				}
 			}
 
-			observer.onError(NSError())
-
-			return Disposables.create()
+			return Disposables.create {
+				disposed = true
+			}
 		}
 	}
 
+	static func createTask(source: Int, quantity: Int) -> Observable<String> {
+		return RxQueueTests.createObservable(quantity: quantity)
+			.map { number -> String in
+				return String("source: \(source) task: \(number)")
+			}
+	}
+
 	func testSubscribe() {
-		let semaphore = DispatchSemaphore(value: 3)
 		let bag = DisposeBag()
 
+		var emittedCount = 0
+		let emitQuantity = 9
 		var completed = false
 
-		let queue = Observable.of(1, 2, 3, 4, 5, 6, 7, 8, 9)
-
 		RxQueue
-			.create(observable: queue, semaphore: semaphore)
-			.subscribe(onNext: { task in
+			.create(observable: RxQueueTests.createObservable(quantity: emitQuantity), maxConcurrentCount: 3)
+			.subscribe(onNext: { task, counter in
+				emittedCount += 1
+
 				// do some time-consuming task
 				OperationQueue().addOperation {
 					print("\(task) started")
@@ -44,7 +68,7 @@ class RxQueueTests: XCTestCase {
 					print("\(task) finished")
 
 					// send signal() to pop next task from queue
-					semaphore.signal()
+					counter.signal()
 				}
 			}, onCompleted: {
 				completed = true
@@ -53,26 +77,34 @@ class RxQueueTests: XCTestCase {
 
 		RunLoop.current.run(until: Date(timeIntervalSinceNow: 5))
 
+		XCTAssertEqual(emittedCount, emitQuantity)
 		XCTAssertTrue(completed)
 	}
 
 	func testError() {
-		let semaphore = DispatchSemaphore(value: 3)
 		let bag = DisposeBag()
 
+		var emittedCount = 0
+		let emitQuantity = 3
 		var completed = false
 
-		let queue = RxQueueTests.queueWithError()
+		let tasks = RxQueueTests.createObservable(quantity: emitQuantity, withError: NSError())
 
 		RxQueue
-			.create(observable: queue, semaphore: semaphore)
-			.subscribe(onNext: { task in
-				print(task)
+			.create(observable: tasks, maxConcurrentCount: 3)
+			.subscribe(onNext: { task, counter in
+				emittedCount += 1
+
+				// do some time-consuming task
 				OperationQueue().addOperation {
+					print("\(task) started")
 					sleep(1)
-					semaphore.signal()
+					print("\(task) finished")
+
+					// send signal() to pop next task from queue
+					counter.signal()
 				}
-			}, onCompleted: {
+			}, onError: { _ in
 				completed = true
 			})
 			.addDisposableTo(bag)
@@ -82,39 +114,16 @@ class RxQueueTests: XCTestCase {
 		XCTAssertTrue(completed)
 	}
 
-	func testFlatMap() {
-		let semaphore = DispatchSemaphore(value: 2)
-		let bag = DisposeBag()
-
+	func testDispose() {
+		var emittedCount = 0
+		let emitQuantity = 9
 		var completed = false
 
-		let sourceObservable = Observable<Int>.create { observer in
-			for i in 1...3 {
-				print("source: \(i)")
-				observer.onNext(i)
-				RunLoop.current.run(until: Date(timeIntervalSinceNow: 2))
-			}
+		let disposable = RxQueue
+			.create(observable: RxQueueTests.createObservable(quantity: emitQuantity, interval: 1), maxConcurrentCount: 3)
+			.subscribe(onNext: { task, counter in
+				emittedCount += 1
 
-			observer.onCompleted()
-			return Disposables.create()
-		}
-
-		sourceObservable
-			.flatMapLatest { source -> Observable<String> in
-				// creating tasks from sourceObservable
-				let queue = Observable<String>.create { observer in
-					for i in 1...5 {
-						let task = source * i
-						observer.onNext(String("source: \(source) task: \(task)"))
-					}
-					observer.onCompleted()
-
-					return Disposables.create()
-				}
-
-				return RxQueue.create(observable: queue, semaphore: semaphore)
-			}
-			.subscribe(onNext: { task in
 				// do some time-consuming task
 				OperationQueue().addOperation {
 					print("\(task) started")
@@ -122,15 +131,62 @@ class RxQueueTests: XCTestCase {
 					print("\(task) finished")
 
 					// send signal() to pop next task from queue
-					semaphore.signal()
+					counter.signal()
+				}
+			}, onCompleted: {
+				completed = true
+			})
+
+		// wait until second item emitted
+		RunLoop.current.run(until: Date(timeIntervalSinceNow: 1.5))
+
+		disposable.dispose()
+
+		// wait until second task finished
+		RunLoop.current.run(until: Date(timeIntervalSinceNow: 1))
+
+		XCTAssertEqual(emittedCount, 2)
+		XCTAssertFalse(completed)
+	}
+
+	func testFlatMap() {
+		let bag = DisposeBag()
+
+		var emittedCount = 0
+		let sourceQuantity = 3
+		var completed = false
+
+		let source = RxQueueTests.createObservable(quantity: sourceQuantity, interval: 2)
+
+		source
+			.debug()
+			.flatMapLatest { number -> Observable<(String, Counter)> in
+				// creating tasks from sourceObservable
+				let tasks = RxQueueTests.createTask(source: number, quantity: 5)
+
+				return RxQueue.create(observable: tasks, maxConcurrentCount: 5)
+			}
+			.debug()
+			.subscribe(onNext: { task, counter in
+				emittedCount += 1
+
+				// do some time-consuming task
+				OperationQueue().addOperation {
+					print("\(task) started")
+					sleep(1)
+					print("\(task) finished")
+
+					// send signal() to pop next task from queue
+					counter.signal()
 				}
 			}, onCompleted: {
 				completed = true
 			})
 			.addDisposableTo(bag)
 
-		RunLoop.current.run(until: Date(timeIntervalSinceNow: 10))
+		RunLoop.current.run(until: Date(timeIntervalSinceNow: 13))
 
+		XCTAssertEqual(emittedCount, 15)
 		XCTAssertTrue(completed)
 	}
 }
