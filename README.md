@@ -25,7 +25,7 @@ RxObservableQueue is available through [CocoaPods](http://cocoapods.org) and [Ca
 
 To install, simply add the following line to your `Podfile`:
 
-> CocoaPods 0.39.0+ is required to build NowCastMapView.
+> CocoaPods 1.2.1+ is required to build RxObservableQueue.
 
 ```ruby
 platform :ios, '8.0'
