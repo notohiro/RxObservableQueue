@@ -1,6 +1,6 @@
 //
-//  RxQueueTests.swift
-//  RxQueueTests
+//  RxObservableQueueTests.swift
+//  RxObservableQueueTests
 //
 //  Created by Hiroshi Noto on 2017/05/09.
 //  Copyright © 2017 Hiroshi Noto. All rights reserved.
@@ -10,9 +10,9 @@ import XCTest
 
 import RxSwift
 
-@testable import RxQueue
+@testable import RxObservableQueue
 
-class RxQueueTests: XCTestCase {
+class RxObservableQueueTests: XCTestCase {
 	static func createObservable(quantity: Int,
 	                             interval: UInt32 = 0,
 	                             withError error: Error? = nil) -> Observable<Int> {
@@ -43,10 +43,10 @@ class RxQueueTests: XCTestCase {
 	}
 
 	static func createTask(source: Int, quantity: Int) -> Observable<String> {
-		return RxQueueTests.createObservable(quantity: quantity)
+		return RxObservableQueueTests.createObservable(quantity: quantity)
 			.map { number -> String in
 				return String("source: \(source) task: \(number)")
-			}
+		}
 	}
 
 	func testSubscribe() {
@@ -56,8 +56,8 @@ class RxQueueTests: XCTestCase {
 		let emitQuantity = 9
 		var completed = false
 
-		RxQueue
-			.create(observable: RxQueueTests.createObservable(quantity: emitQuantity), maxConcurrentCount: 3)
+		RxObservableQueue
+			.create(observable: RxObservableQueueTests.createObservable(quantity: emitQuantity), maxConcurrentCount: 3)
 			.subscribe(onNext: { task, counter in
 				emittedCount += 1
 
@@ -88,9 +88,9 @@ class RxQueueTests: XCTestCase {
 		let emitQuantity = 3
 		var completed = false
 
-		let tasks = RxQueueTests.createObservable(quantity: emitQuantity, withError: NSError())
+		let tasks = RxObservableQueueTests.createObservable(quantity: emitQuantity, withError: NSError())
 
-		RxQueue
+		RxObservableQueue
 			.create(observable: tasks, maxConcurrentCount: 3)
 			.subscribe(onNext: { task, counter in
 				emittedCount += 1
@@ -119,8 +119,8 @@ class RxQueueTests: XCTestCase {
 		let emitQuantity = 9
 		var completed = false
 
-		let disposable = RxQueue
-			.create(observable: RxQueueTests.createObservable(quantity: emitQuantity, interval: 1), maxConcurrentCount: 3)
+		let disposable = RxObservableQueue
+			.create(observable: RxObservableQueueTests.createObservable(quantity: emitQuantity, interval: 1), maxConcurrentCount: 3)
 			.subscribe(onNext: { task, counter in
 				emittedCount += 1
 
@@ -156,15 +156,15 @@ class RxQueueTests: XCTestCase {
 		let sourceQuantity = 3
 		var completed = false
 
-		let source = RxQueueTests.createObservable(quantity: sourceQuantity, interval: 2)
+		let source = RxObservableQueueTests.createObservable(quantity: sourceQuantity, interval: 2)
 
 		source
 			.debug()
 			.flatMapLatest { number -> Observable<(String, Counter)> in
 				// creating tasks from sourceObservable
-				let tasks = RxQueueTests.createTask(source: number, quantity: 5)
+				let tasks = RxObservableQueueTests.createTask(source: number, quantity: 5)
 
-				return RxQueue.create(observable: tasks, maxConcurrentCount: 5)
+				return RxObservableQueue.create(observable: tasks, maxConcurrentCount: 5)
 			}
 			.debug()
 			.subscribe(onNext: { task, counter in
@@ -185,7 +185,7 @@ class RxQueueTests: XCTestCase {
 			.addDisposableTo(bag)
 
 		RunLoop.current.run(until: Date(timeIntervalSinceNow: 13))
-
+		
 		XCTAssertEqual(emittedCount, 15)
 		XCTAssertTrue(completed)
 	}

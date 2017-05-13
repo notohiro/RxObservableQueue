@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D352C0071EC1716E003D5813"
-               BuildableName = "RxQueue.framework"
-               BlueprintName = "RxQueue iOS"
-               ReferencedContainer = "container:RxQueue.xcodeproj">
+               BlueprintIdentifier = "D3EDE39A1EC6FA7A00D3A23C"
+               BuildableName = "RxObservableQueue iOS.framework"
+               BlueprintName = "RxObservableQueue iOS"
+               ReferencedContainer = "container:RxObservableQueue.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D3EDE3A21EC6FA7A00D3A23C"
+               BuildableName = "RxObservableQueue iOSTests.xctest"
+               BlueprintName = "RxObservableQueue iOSTests"
+               ReferencedContainer = "container:RxObservableQueue.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D3EDE39A1EC6FA7A00D3A23C"
+            BuildableName = "RxObservableQueue iOS.framework"
+            BlueprintName = "RxObservableQueue iOS"
+            ReferencedContainer = "container:RxObservableQueue.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -45,10 +64,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D352C0071EC1716E003D5813"
-            BuildableName = "RxQueue.framework"
-            BlueprintName = "RxQueue iOS"
-            ReferencedContainer = "container:RxQueue.xcodeproj">
+            BlueprintIdentifier = "D3EDE39A1EC6FA7A00D3A23C"
+            BuildableName = "RxObservableQueue iOS.framework"
+            BlueprintName = "RxObservableQueue iOS"
+            ReferencedContainer = "container:RxObservableQueue.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -63,10 +82,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D352C0071EC1716E003D5813"
-            BuildableName = "RxQueue.framework"
-            BlueprintName = "RxQueue iOS"
-            ReferencedContainer = "container:RxQueue.xcodeproj">
+            BlueprintIdentifier = "D3EDE39A1EC6FA7A00D3A23C"
+            BuildableName = "RxObservableQueue iOS.framework"
+            BlueprintName = "RxObservableQueue iOS"
+            ReferencedContainer = "container:RxObservableQueue.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

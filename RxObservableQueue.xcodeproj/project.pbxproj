@@ -7,124 +7,125 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D352BFED1EC17098003D5813 /* RxQueue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D352BFE31EC17097003D5813 /* RxQueue.framework */; };
-		D352BFF21EC17098003D5813 /* RxQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D352BFF11EC17098003D5813 /* RxQueueTests.swift */; };
-		D352BFF41EC17098003D5813 /* RxQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = D352BFE61EC17098003D5813 /* RxQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D352BFFE1EC170AF003D5813 /* RxQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D352BFFD1EC170AF003D5813 /* RxQueue.swift */; };
-		D352C0021EC17117003D5813 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D352C0011EC17117003D5813 /* RxSwift.framework */; };
-		D352C0101EC171A3003D5813 /* RxQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D352BFFD1EC170AF003D5813 /* RxQueue.swift */; };
-		D352C0111EC17289003D5813 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D352C0011EC17117003D5813 /* RxSwift.framework */; };
-		D352C0121EC1D3FF003D5813 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D352C0011EC17117003D5813 /* RxSwift.framework */; };
-		D352C0151EC1F457003D5813 /* RxSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D352C0011EC17117003D5813 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3EDE37B1EC6F83100D3A23C /* RxObservableQueue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EDE3711EC6F83100D3A23C /* RxObservableQueue.framework */; };
+		D3EDE3801EC6F83100D3A23C /* RxObservableQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EDE37F1EC6F83100D3A23C /* RxObservableQueueTests.swift */; };
+		D3EDE3821EC6F83100D3A23C /* RxObservableQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = D3EDE3741EC6F83100D3A23C /* RxObservableQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3EDE38C1EC6F86F00D3A23C /* RxObservableQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EDE38B1EC6F86F00D3A23C /* RxObservableQueue.swift */; };
+		D3EDE38F1EC6F91300D3A23C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EDE38E1EC6F91300D3A23C /* RxSwift.framework */; };
+		D3EDE3951EC6F9AB00D3A23C /* RxSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3EDE38E1EC6F91300D3A23C /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3EDE3B31EC6FAE100D3A23C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EDE3B21EC6FAE100D3A23C /* RxSwift.framework */; };
+		D3EDE3B41EC6FBF500D3A23C /* RxObservableQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EDE38B1EC6F86F00D3A23C /* RxObservableQueue.swift */; };
+		D3EDE3B51EC6FBFE00D3A23C /* RxObservableQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = D3EDE3741EC6F83100D3A23C /* RxObservableQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D352BFEE1EC17098003D5813 /* PBXContainerItemProxy */ = {
+		D3EDE37C1EC6F83100D3A23C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D352BFDA1EC17097003D5813 /* Project object */;
+			containerPortal = D3EDE3681EC6F83100D3A23C /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D352BFE21EC17097003D5813;
-			remoteInfo = RxQueue;
+			remoteGlobalIDString = D3EDE3701EC6F83100D3A23C;
+			remoteInfo = RxObservableQueue;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D352C0141EC1F44B003D5813 /* CopyFiles */ = {
+		D3EDE3901EC6F92B00D3A23C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D352C0151EC1F457003D5813 /* RxSwift.framework in CopyFiles */,
+				D3EDE3951EC6F9AB00D3A23C /* RxSwift.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D352BFE31EC17097003D5813 /* RxQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D352BFE61EC17098003D5813 /* RxQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxQueue.h; sourceTree = "<group>"; };
-		D352BFE71EC17098003D5813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D352BFEC1EC17098003D5813 /* RxQueueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxQueueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D352BFF11EC17098003D5813 /* RxQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxQueueTests.swift; sourceTree = "<group>"; };
-		D352BFF31EC17098003D5813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D352BFFD1EC170AF003D5813 /* RxQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxQueue.swift; sourceTree = "<group>"; };
-		D352C0011EC17117003D5813 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		D352C0081EC1716E003D5813 /* RxQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3EDE3711EC6F83100D3A23C /* RxObservableQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxObservableQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3EDE3741EC6F83100D3A23C /* RxObservableQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxObservableQueue.h; sourceTree = "<group>"; };
+		D3EDE3751EC6F83100D3A23C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3EDE37A1EC6F83100D3A23C /* RxObservableQueueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxObservableQueueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3EDE37F1EC6F83100D3A23C /* RxObservableQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxObservableQueueTests.swift; sourceTree = "<group>"; };
+		D3EDE3811EC6F83100D3A23C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3EDE38B1EC6F86F00D3A23C /* RxObservableQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxObservableQueue.swift; sourceTree = "<group>"; };
+		D3EDE38E1EC6F91300D3A23C /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		D3EDE39B1EC6FA7A00D3A23C /* RxObservableQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxObservableQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3EDE3B21EC6FAE100D3A23C /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../RxNowCastMapView/Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D352BFDF1EC17097003D5813 /* Frameworks */ = {
+		D3EDE36D1EC6F83100D3A23C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D352C0021EC17117003D5813 /* RxSwift.framework in Frameworks */,
+				D3EDE38F1EC6F91300D3A23C /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D352BFE91EC17098003D5813 /* Frameworks */ = {
+		D3EDE3771EC6F83100D3A23C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D352BFED1EC17098003D5813 /* RxQueue.framework in Frameworks */,
-				D352C0121EC1D3FF003D5813 /* RxSwift.framework in Frameworks */,
+				D3EDE37B1EC6F83100D3A23C /* RxObservableQueue.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D352C0041EC1716E003D5813 /* Frameworks */ = {
+		D3EDE3971EC6FA7A00D3A23C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D352C0111EC17289003D5813 /* RxSwift.framework in Frameworks */,
+				D3EDE3B31EC6FAE100D3A23C /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D352BFD91EC17097003D5813 = {
+		D3EDE3671EC6F83100D3A23C = {
 			isa = PBXGroup;
 			children = (
-				D352BFE51EC17097003D5813 /* RxQueue */,
-				D352BFF01EC17098003D5813 /* RxQueueTests */,
-				D352BFE41EC17097003D5813 /* Products */,
-				D352C0001EC17115003D5813 /* Frameworks */,
+				D3EDE3731EC6F83100D3A23C /* RxObservableQueue */,
+				D3EDE37E1EC6F83100D3A23C /* RxObservableQueueTests */,
+				D3EDE3721EC6F83100D3A23C /* Products */,
+				D3EDE38D1EC6F91300D3A23C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		D352BFE41EC17097003D5813 /* Products */ = {
+		D3EDE3721EC6F83100D3A23C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D352BFE31EC17097003D5813 /* RxQueue.framework */,
-				D352BFEC1EC17098003D5813 /* RxQueueTests.xctest */,
-				D352C0081EC1716E003D5813 /* RxQueue.framework */,
+				D3EDE3711EC6F83100D3A23C /* RxObservableQueue.framework */,
+				D3EDE37A1EC6F83100D3A23C /* RxObservableQueueTests.xctest */,
+				D3EDE39B1EC6FA7A00D3A23C /* RxObservableQueue.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D352BFE51EC17097003D5813 /* RxQueue */ = {
+		D3EDE3731EC6F83100D3A23C /* RxObservableQueue */ = {
 			isa = PBXGroup;
 			children = (
-				D352BFE61EC17098003D5813 /* RxQueue.h */,
-				D352BFE71EC17098003D5813 /* Info.plist */,
-				D352BFFD1EC170AF003D5813 /* RxQueue.swift */,
+				D3EDE3741EC6F83100D3A23C /* RxObservableQueue.h */,
+				D3EDE38B1EC6F86F00D3A23C /* RxObservableQueue.swift */,
+				D3EDE3751EC6F83100D3A23C /* Info.plist */,
 			);
-			path = RxQueue;
+			path = RxObservableQueue;
 			sourceTree = "<group>";
 		};
-		D352BFF01EC17098003D5813 /* RxQueueTests */ = {
+		D3EDE37E1EC6F83100D3A23C /* RxObservableQueueTests */ = {
 			isa = PBXGroup;
 			children = (
-				D352BFF11EC17098003D5813 /* RxQueueTests.swift */,
-				D352BFF31EC17098003D5813 /* Info.plist */,
+				D3EDE37F1EC6F83100D3A23C /* RxObservableQueueTests.swift */,
+				D3EDE3811EC6F83100D3A23C /* Info.plist */,
 			);
-			path = RxQueueTests;
+			path = RxObservableQueueTests;
 			sourceTree = "<group>";
 		};
-		D352C0001EC17115003D5813 /* Frameworks */ = {
+		D3EDE38D1EC6F91300D3A23C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D352C0011EC17117003D5813 /* RxSwift.framework */,
+				D3EDE3B21EC6FAE100D3A23C /* RxSwift.framework */,
+				D3EDE38E1EC6F91300D3A23C /* RxSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -132,144 +133,145 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		D352BFE01EC17097003D5813 /* Headers */ = {
+		D3EDE36E1EC6F83100D3A23C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D352BFF41EC17098003D5813 /* RxQueue.h in Headers */,
+				D3EDE3821EC6F83100D3A23C /* RxObservableQueue.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D352C0051EC1716E003D5813 /* Headers */ = {
+		D3EDE3981EC6FA7A00D3A23C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3EDE3B51EC6FBFE00D3A23C /* RxObservableQueue.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D352BFE21EC17097003D5813 /* RxQueue */ = {
+		D3EDE3701EC6F83100D3A23C /* RxObservableQueue */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D352BFF71EC17098003D5813 /* Build configuration list for PBXNativeTarget "RxQueue" */;
+			buildConfigurationList = D3EDE3851EC6F83100D3A23C /* Build configuration list for PBXNativeTarget "RxObservableQueue" */;
 			buildPhases = (
-				D352BFDE1EC17097003D5813 /* Sources */,
-				D352BFDF1EC17097003D5813 /* Frameworks */,
-				D352BFE01EC17097003D5813 /* Headers */,
-				D352BFE11EC17097003D5813 /* Resources */,
-				D352C0161EC28BF9003D5813 /* SwiftLint */,
+				D3EDE36C1EC6F83100D3A23C /* Sources */,
+				D3EDE36D1EC6F83100D3A23C /* Frameworks */,
+				D3EDE36E1EC6F83100D3A23C /* Headers */,
+				D3EDE36F1EC6F83100D3A23C /* Resources */,
+				D3EDE3941EC6F97000D3A23C /* SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = RxQueue;
-			productName = RxQueue;
-			productReference = D352BFE31EC17097003D5813 /* RxQueue.framework */;
+			name = RxObservableQueue;
+			productName = RxObservableQueue;
+			productReference = D3EDE3711EC6F83100D3A23C /* RxObservableQueue.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D352BFEB1EC17098003D5813 /* RxQueueTests */ = {
+		D3EDE3791EC6F83100D3A23C /* RxObservableQueueTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D352BFFA1EC17098003D5813 /* Build configuration list for PBXNativeTarget "RxQueueTests" */;
+			buildConfigurationList = D3EDE3881EC6F83100D3A23C /* Build configuration list for PBXNativeTarget "RxObservableQueueTests" */;
 			buildPhases = (
-				D352BFE81EC17098003D5813 /* Sources */,
-				D352BFE91EC17098003D5813 /* Frameworks */,
-				D352BFEA1EC17098003D5813 /* Resources */,
-				D352C0141EC1F44B003D5813 /* CopyFiles */,
-				D352C0171EC28C3A003D5813 /* SwiftLint */,
+				D3EDE3761EC6F83100D3A23C /* Sources */,
+				D3EDE3771EC6F83100D3A23C /* Frameworks */,
+				D3EDE3781EC6F83100D3A23C /* Resources */,
+				D3EDE3901EC6F92B00D3A23C /* CopyFiles */,
+				D3EDE3931EC6F94500D3A23C /* SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D352BFEF1EC17098003D5813 /* PBXTargetDependency */,
+				D3EDE37D1EC6F83100D3A23C /* PBXTargetDependency */,
 			);
-			name = RxQueueTests;
-			productName = RxQueueTests;
-			productReference = D352BFEC1EC17098003D5813 /* RxQueueTests.xctest */;
+			name = RxObservableQueueTests;
+			productName = RxObservableQueueTests;
+			productReference = D3EDE37A1EC6F83100D3A23C /* RxObservableQueueTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D352C0071EC1716E003D5813 /* RxQueue iOS */ = {
+		D3EDE39A1EC6FA7A00D3A23C /* RxObservableQueue iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D352C00D1EC1716E003D5813 /* Build configuration list for PBXNativeTarget "RxQueue iOS" */;
+			buildConfigurationList = D3EDE3AC1EC6FA7A00D3A23C /* Build configuration list for PBXNativeTarget "RxObservableQueue iOS" */;
 			buildPhases = (
-				D352C0031EC1716E003D5813 /* Sources */,
-				D352C0041EC1716E003D5813 /* Frameworks */,
-				D352C0051EC1716E003D5813 /* Headers */,
-				D352C0061EC1716E003D5813 /* Resources */,
+				D3EDE3961EC6FA7A00D3A23C /* Sources */,
+				D3EDE3971EC6FA7A00D3A23C /* Frameworks */,
+				D3EDE3981EC6FA7A00D3A23C /* Headers */,
+				D3EDE3991EC6FA7A00D3A23C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "RxQueue iOS";
-			productName = "RxQueue iOS";
-			productReference = D352C0081EC1716E003D5813 /* RxQueue.framework */;
+			name = "RxObservableQueue iOS";
+			productName = "RxObservableQueue iOS";
+			productReference = D3EDE39B1EC6FA7A00D3A23C /* RxObservableQueue.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D352BFDA1EC17097003D5813 /* Project object */ = {
+		D3EDE3681EC6F83100D3A23C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Hiroshi Noto";
 				TargetAttributes = {
-					D352BFE21EC17097003D5813 = {
+					D3EDE3701EC6F83100D3A23C = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = NGSEKJM42E;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
-					D352BFEB1EC17098003D5813 = {
+					D3EDE3791EC6F83100D3A23C = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = NGSEKJM42E;
 						ProvisioningStyle = Automatic;
 					};
-					D352C0071EC1716E003D5813 = {
+					D3EDE39A1EC6FA7A00D3A23C = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = NGSEKJM42E;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = D352BFDD1EC17097003D5813 /* Build configuration list for PBXProject "RxQueue" */;
+			buildConfigurationList = D3EDE36B1EC6F83100D3A23C /* Build configuration list for PBXProject "RxObservableQueue" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = D352BFD91EC17097003D5813;
-			productRefGroup = D352BFE41EC17097003D5813 /* Products */;
+			mainGroup = D3EDE3671EC6F83100D3A23C;
+			productRefGroup = D3EDE3721EC6F83100D3A23C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D352BFE21EC17097003D5813 /* RxQueue */,
-				D352C0071EC1716E003D5813 /* RxQueue iOS */,
-				D352BFEB1EC17098003D5813 /* RxQueueTests */,
+				D3EDE3701EC6F83100D3A23C /* RxObservableQueue */,
+				D3EDE39A1EC6FA7A00D3A23C /* RxObservableQueue iOS */,
+				D3EDE3791EC6F83100D3A23C /* RxObservableQueueTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D352BFE11EC17097003D5813 /* Resources */ = {
+		D3EDE36F1EC6F83100D3A23C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D352BFEA1EC17098003D5813 /* Resources */ = {
+		D3EDE3781EC6F83100D3A23C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D352C0061EC1716E003D5813 /* Resources */ = {
+		D3EDE3991EC6FA7A00D3A23C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -279,7 +281,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D352C0161EC28BF9003D5813 /* SwiftLint */ = {
+		D3EDE3931EC6F94500D3A23C /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -291,9 +293,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint lint --path RxQueue\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint lint --path RxObservableQueueTests\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
-		D352C0171EC28C3A003D5813 /* SwiftLint */ = {
+		D3EDE3941EC6F97000D3A23C /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -305,47 +307,47 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint lint --path RxQueueTests\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint lint --path RxObservableQueue\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D352BFDE1EC17097003D5813 /* Sources */ = {
+		D3EDE36C1EC6F83100D3A23C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D352BFFE1EC170AF003D5813 /* RxQueue.swift in Sources */,
+				D3EDE38C1EC6F86F00D3A23C /* RxObservableQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D352BFE81EC17098003D5813 /* Sources */ = {
+		D3EDE3761EC6F83100D3A23C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D352BFF21EC17098003D5813 /* RxQueueTests.swift in Sources */,
+				D3EDE3801EC6F83100D3A23C /* RxObservableQueueTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D352C0031EC1716E003D5813 /* Sources */ = {
+		D3EDE3961EC6FA7A00D3A23C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D352C0101EC171A3003D5813 /* RxQueue.swift in Sources */,
+				D3EDE3B41EC6FBF500D3A23C /* RxObservableQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D352BFEF1EC17098003D5813 /* PBXTargetDependency */ = {
+		D3EDE37D1EC6F83100D3A23C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D352BFE21EC17097003D5813 /* RxQueue */;
-			targetProxy = D352BFEE1EC17098003D5813 /* PBXContainerItemProxy */;
+			target = D3EDE3701EC6F83100D3A23C /* RxObservableQueue */;
+			targetProxy = D3EDE37C1EC6F83100D3A23C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		D352BFF51EC17098003D5813 /* Debug */ = {
+		D3EDE3831EC6F83100D3A23C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -399,7 +401,7 @@
 			};
 			name = Debug;
 		};
-		D352BFF61EC17098003D5813 /* Release */ = {
+		D3EDE3841EC6F83100D3A23C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -446,9 +448,10 @@
 			};
 			name = Release;
 		};
-		D352BFF81EC17098003D5813 /* Debug */ = {
+		D3EDE3861EC6F83100D3A23C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -460,11 +463,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = RxQueue/Info.plist;
+				INFOPLIST_FILE = RxObservableQueue/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.notohiro.RxQueue;
+				PRODUCT_BUNDLE_IDENTIFIER = com.notohiro.RxObservableQueue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -472,9 +474,10 @@
 			};
 			name = Debug;
 		};
-		D352BFF91EC17098003D5813 /* Release */ = {
+		D3EDE3871EC6F83100D3A23C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -486,52 +489,45 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = RxQueue/Info.plist;
+				INFOPLIST_FILE = RxObservableQueue/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.notohiro.RxQueue;
+				PRODUCT_BUNDLE_IDENTIFIER = com.notohiro.RxObservableQueue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
-		D352BFFB1EC17098003D5813 /* Debug */ = {
+		D3EDE3891EC6F83100D3A23C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = NGSEKJM42E;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = RxQueueTests/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				INFOPLIST_FILE = RxObservableQueueTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.notohiro.RxQueueTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.notohiro.RxObservableQueueTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		D352BFFC1EC17098003D5813 /* Release */ = {
+		D3EDE38A1EC6F83100D3A23C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = NGSEKJM42E;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = RxQueueTests/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				INFOPLIST_FILE = RxObservableQueueTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.notohiro.RxQueueTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.notohiro.RxObservableQueueTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
-		D352C00E1EC1716E003D5813 /* Debug */ = {
+		D3EDE3AD1EC6FA7A00D3A23C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -541,22 +537,18 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/RxQueue/Info.plist";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				INFOPLIST_FILE = RxObservableQueue/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.notohiro.RxQueue-iOS";
-				PRODUCT_NAME = RxQueue;
+				PRODUCT_BUNDLE_IDENTIFIER = com.notohiro.RxObservableQueue;
+				PRODUCT_NAME = RxObservableQueue;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		D352C00F1EC1716E003D5813 /* Release */ = {
+		D3EDE3AE1EC6FA7A00D3A23C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -566,16 +558,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/RxQueue/Info.plist";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				INFOPLIST_FILE = RxObservableQueue/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.notohiro.RxQueue-iOS";
-				PRODUCT_NAME = RxQueue;
+				PRODUCT_BUNDLE_IDENTIFIER = com.notohiro.RxObservableQueue;
+				PRODUCT_NAME = RxObservableQueue;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -584,43 +572,42 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D352BFDD1EC17097003D5813 /* Build configuration list for PBXProject "RxQueue" */ = {
+		D3EDE36B1EC6F83100D3A23C /* Build configuration list for PBXProject "RxObservableQueue" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D352BFF51EC17098003D5813 /* Debug */,
-				D352BFF61EC17098003D5813 /* Release */,
+				D3EDE3831EC6F83100D3A23C /* Debug */,
+				D3EDE3841EC6F83100D3A23C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D352BFF71EC17098003D5813 /* Build configuration list for PBXNativeTarget "RxQueue" */ = {
+		D3EDE3851EC6F83100D3A23C /* Build configuration list for PBXNativeTarget "RxObservableQueue" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D352BFF81EC17098003D5813 /* Debug */,
-				D352BFF91EC17098003D5813 /* Release */,
+				D3EDE3861EC6F83100D3A23C /* Debug */,
+				D3EDE3871EC6F83100D3A23C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D352BFFA1EC17098003D5813 /* Build configuration list for PBXNativeTarget "RxQueueTests" */ = {
+		D3EDE3881EC6F83100D3A23C /* Build configuration list for PBXNativeTarget "RxObservableQueueTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D352BFFB1EC17098003D5813 /* Debug */,
-				D352BFFC1EC17098003D5813 /* Release */,
+				D3EDE3891EC6F83100D3A23C /* Debug */,
+				D3EDE38A1EC6F83100D3A23C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D352C00D1EC1716E003D5813 /* Build configuration list for PBXNativeTarget "RxQueue iOS" */ = {
+		D3EDE3AC1EC6FA7A00D3A23C /* Build configuration list for PBXNativeTarget "RxObservableQueue iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D352C00E1EC1716E003D5813 /* Debug */,
-				D352C00F1EC1716E003D5813 /* Release */,
+				D3EDE3AD1EC6FA7A00D3A23C /* Debug */,
+				D3EDE3AE1EC6FA7A00D3A23C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D352BFDA1EC17097003D5813 /* Project object */;
+	rootObject = D3EDE3681EC6F83100D3A23C /* Project object */;
 }

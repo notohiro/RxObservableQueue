@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "46E9993B17953911CF2350681DF1DE47BF70530D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "46E9993B17953911CF2350681DF1DE47BF70530D" : 9223372036854775807,
+    "E2F6E1CC0A47D03DBB5795C423CE169C45A4BA33" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8C1BAD7B-E87D-433A-BED1-3E1F1DABF235",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "46E9993B17953911CF2350681DF1DE47BF70530D" : "RxObservableQueue\/",
+    "E2F6E1CC0A47D03DBB5795C423CE169C45A4BA33" : "RxNowCastMapView\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "RxObservableQueue",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "RxObservableQueue.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/notohiro\/RxQueue.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "46E9993B17953911CF2350681DF1DE47BF70530D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/notohiro\/RxNowCastMapView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E2F6E1CC0A47D03DBB5795C423CE169C45A4BA33"
+    }
+  ]
+}

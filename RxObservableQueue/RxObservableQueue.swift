@@ -1,6 +1,6 @@
 //
-//  RxQueue.swift
-//  RxQueue
+//  RxObservableQueue.swift
+//  RxObservableQueue
 //
 //  Created by Hiroshi Noto on 2017/05/09.
 //  Copyright © 2017 Hiroshi Noto. All rights reserved.
@@ -41,7 +41,7 @@ open class Counter {
 	}
 }
 
-open class RxQueue<E> {
+open class RxObservableQueue<E> {
 	enum State {
 		case subscribing
 		case disposed
