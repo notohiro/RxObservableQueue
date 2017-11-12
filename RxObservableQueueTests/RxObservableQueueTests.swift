@@ -73,7 +73,7 @@ class RxObservableQueueTests: XCTestCase {
 			}, onCompleted: {
 				completed = true
 			})
-			.addDisposableTo(bag)
+			.disposed(by: bag)
 
 		RunLoop.current.run(until: Date(timeIntervalSinceNow: 5))
 
@@ -107,7 +107,7 @@ class RxObservableQueueTests: XCTestCase {
 			}, onError: { _ in
 				completed = true
 			})
-			.addDisposableTo(bag)
+			.disposed(by: bag)
 
 		RunLoop.current.run(until: Date(timeIntervalSinceNow: 5))
 
@@ -182,10 +182,10 @@ class RxObservableQueueTests: XCTestCase {
 			}, onCompleted: {
 				completed = true
 			})
-			.addDisposableTo(bag)
+			.disposed(by: bag)
 
 		RunLoop.current.run(until: Date(timeIntervalSinceNow: 13))
-		
+
 		XCTAssertEqual(emittedCount, 15)
 		XCTAssertTrue(completed)
 	}

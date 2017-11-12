@@ -90,7 +90,7 @@ open class RxObservableQueue<E> {
 
 					if queue.count != 0 && counter.up() {
 						let element = queue.removeFirst()
-						OperationQueue().addOperation { observer.onNext(element, counter) }
+						OperationQueue().addOperation { observer.onNext((element, counter)) }
 					}
 
 					semaphore.signal()
