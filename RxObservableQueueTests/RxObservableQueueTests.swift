@@ -21,10 +21,10 @@ class RxObservableQueueTests: XCTestCase {
 
 			OperationQueue().addOperation {
 				if quantity > 0 {
-					for i in 1...quantity {
+					for index in 1...quantity {
 						if disposed { return }
 
-						observer.onNext(i)
+						observer.onNext(index)
 						sleep(interval)
 					}
 				}
