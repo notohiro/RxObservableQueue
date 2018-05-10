@@ -1,0 +1,19 @@
+language: objective-c
+osx_image: xcode9.3
+
+notifications:
+  email: false
+  slack:
+    secure: k6NKG1M8onJR96XY/ABR+Sx/GZFZgCcPZcAw3hhyxiVikWq00OKClMcMLX4phjQXUWIsAO6YyaMbCx/3Fr0w57p4AZHp0nqJu9sXZbOmQolulFZ3VLkMPQpKOMIwT9vTnSDnBpJeFqLiR4VTiRzuUQX7JxBdp8DQ7O9VGtE0c3PGWQdEj1fEpwYq2UojuhClMojPXRxmrfo8F8YoEklL2fLAHqFV7q5s9QpqkaopKJ9Lh9ooVc/zWCb4MLox1u2npnpT8VmQ9xCtVdeqMwsyx+c1wKiusuzqnCGuwA2UH4SHwkvbsR/debvBUjxQKfJZrL1vbLmynXtffu91zvsp9BXQIPMQmk2/TYfQe+Ei/mWzit8eqNm7P5oSSQ0c4lP/fYmI9QrBLBkeB5wjD9zYbA54G6C+s1uvHA/tk18vJkgUDnSL2BUfhnZBfIdgSVFdbA8EIndpGBRSLMrw//iAnwoQHP1IRewAXH2a3YVtkFEk4nYWkmGWtq/ibdNmnxBsmpaxRG3zr7ZKiFi+ux3vDJYw4u5SQoi7SbAhYBNdyJfGaKqFSWlzOn3+K506TU2ypIqperqpDHkD7RLRY2sZo3KMIBbaT4gXwvy0CeMDAFv9/v4QgROes3c7w5p2Yvq/9uvDZRXJBqPKGcGXYd2eHceOICLXjh8pgJ8V//PIcrE=
+
+cache:
+  directories:
+    - Carthage
+
+before_install:
+  - brew update
+  - brew outdated carthage || brew upgrade carthage
+  - carthage bootstrap --verbose --no-use-binaries --platform iOS --cache-builds
+
+script:
+  - xcodebuild clean test -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone X,OS=11.3' -project RxObservableQueue.xcodeproj -scheme 'RxObservableQueue iOS' CODE_SIGNING_REQUIRED=NO
