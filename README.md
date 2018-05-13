@@ -1,7 +1,7 @@
 # RxObservableQueue
 
 [![Swift](https://img.shields.io/badge/Swift-4.1%2B-orange.svg)](https://swift.org)
-[![Build Status](https://travis-ci.org/notohiro/RxObservableQueue.svg?branch=master)](https://travis-ci.org/notohiro/RxObservableQueue)
+[![Build Status](https://www.bitrise.io/app/6b1d2c11dafed4e5/status.svg?token=iBubWiaQe9LDuH3mjzc5-g)](https://www.bitrise.io/app/6b1d2c11dafed4e5)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/RxObservableQueue.svg)](https://img.shields.io/cocoapods/v/RxObservableQueue.svg)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/cocoapods/p/RxObservableQueue.svg?style=flat)](http://cocoapods.org/pods/RxObservableQueue)
