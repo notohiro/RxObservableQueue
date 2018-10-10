@@ -53,11 +53,11 @@ open class RxObservableQueue<E> {
 	}
 
 	// swiftlint:disable:next function_body_length
-	open static func create(observable: Observable<E>, maxConcurrentCount: Int) -> Observable<(E, Counter)> {
+    public static func create(observable: Observable<E>, maxConcurrentCount: Int) -> Observable<(E, Counter)> {
 		return Observable.create { observer in
 			var queue = [E]()
 			var state = State.subscribing
-			var observableResult: Result? = nil
+			var observableResult: Result?
 			let counter = Counter(maxCouncurrentCount: maxConcurrentCount)
 			let semaphore = DispatchSemaphore(value: 1)
 

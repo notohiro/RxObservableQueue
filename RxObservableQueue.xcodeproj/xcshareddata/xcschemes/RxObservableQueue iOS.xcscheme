@@ -20,6 +20,20 @@
                ReferencedContainer = "container:RxObservableQueue.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D386DD77216E51720037EFF7"
+               BuildableName = "RxObservableQueue iOS Tests.xctest"
+               BlueprintName = "RxObservableQueue iOS Tests"
+               ReferencedContainer = "container:RxObservableQueue.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -32,9 +46,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D3EDE3791EC6F83100D3A23C"
-               BuildableName = "RxObservableQueueTests.xctest"
-               BlueprintName = "RxObservableQueueTests"
+               BlueprintIdentifier = "D386DD77216E51720037EFF7"
+               BuildableName = "RxObservableQueue iOS Tests.xctest"
+               BlueprintName = "RxObservableQueue iOS Tests"
                ReferencedContainer = "container:RxObservableQueue.xcodeproj">
             </BuildableReference>
          </TestableReference>
